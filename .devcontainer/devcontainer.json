@@ -1,0 +1,25 @@
+{
+	"name": "Java with PostgreSQL",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "app",
+	"workspaceFolder": "/workspace",
+  
+	"features": {
+	  "ghcr.io/devcontainers/features/java:1": {
+		"version": "none",
+		"installMaven": "false",
+		"installGradle": "true"
+	  },
+	  "ghcr.io/devcontainers/features/node:1": {},
+	  "ghcr.io/devcontainers-contrib/features/angular-cli:2": {},
+	  "ghcr.io/devcontainers-contrib/features/springboot-sdkman:2": {},
+	  "ghcr.io/devcontainers-contrib/features/typescript:2": {}
+	},
+  
+	"forwardPorts": [
+	  8080
+	  // Add other ports you want to forward
+	],
+  
+	"postCreateCommand": "java -version"
+  }

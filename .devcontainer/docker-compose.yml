@@ -1,0 +1,23 @@
+version: '3'
+services:
+  app:
+    image: mcr.microsoft.com/devcontainers/java:1-21-bullseye
+    volumes:
+      - .:/workspace:cached
+    command: /bin/sh -c "while sleep 1000; do :; done"
+    ports:
+      - 8080:8080 # Example port for your application
+
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_PASSWORD: your_password # Set the default password for postgres
+      POSTGRES_USER: your_user # Set the default user for postgres
+      POSTGRES_DB: your_db # Set the default database to be created
+    ports:
+      - 5432:5432 # Default PostgreSQL port
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+volumes:
+  postgres-data:
