@@ -22,7 +22,6 @@ public class AccountController {
 
     @GetMapping("")
     public List<Account> account(@AuthenticationPrincipal User userDetails) {
-        System.out.println(userDetails);
         List<Account> accounts = repository.findAll();
 
 
